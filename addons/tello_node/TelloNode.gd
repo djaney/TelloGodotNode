@@ -179,7 +179,8 @@ func _process_ctrl() -> void:
 				emit_signal("recived_control_code_ok")
 			"error":
 				emit_signal("recived_control_code_error")
-	_keep_active_timer.paused = false
+	if _keep_active_timer:
+		_keep_active_timer.paused = false
 
 
 func send_cmd(cmd: String) -> void:
