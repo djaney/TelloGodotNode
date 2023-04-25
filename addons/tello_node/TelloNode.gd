@@ -317,12 +317,12 @@ func go(x: int, y: int, z: int, s: int) -> void:
 	send_cmd("go {x} {y} {z} {s}".format({"x": x, "y": y, "z": z, "s": s}))
 
 
-func curve(x1: int, y1: int, z1: int, x2: int, y2: int, z2: int, s: int) -> void:
+func curve(coord1: Vector3i, coord2: Vector3i, s: int) -> void:
 	# TODO boundy checks
 	# TODO check x/y/z can’t be between -20 – 20 at the same time
 	# TODO check if the arc radius is not within the range of 0.5-10 meters, it responses false
 	send_cmd("curve {x1} {y1} {z1} {x2} {y2} {z3} {s}".format(
-		{"x1": x1, "y1": y1, "z1": z1, "x2": x2, "y2": y2, "z2": z2, "s": s}
+		{"x1": coord1.x, "y1": coord1.y, "z1": coord1.z, "x2": coord2.x, "y2": coord2.y, "z2": coord2.z, "s": s}
 		))
 
 
@@ -352,41 +352,41 @@ func wifi(ssid: String, password: String) -> void:
 	send_cmd("wifi {ssid} {pass}".format({"ssid": ssid, "pass": password}))
 
 
-func speedQ() -> void:
+func speed_q() -> void:
 	send_cmd("speed?")
 
 
-func batteryQ() -> void:
+func battery_q() -> void:
 	send_cmd("battery?")
 
 
-func timeQ() -> void:
+func time_q() -> void:
 	send_cmd("time?")
 
 
-func heightQ() -> void:
+func height_q() -> void:
 	send_cmd("height?")
 
 
-func tempQ() -> void:
+func temp_q() -> void:
 	send_cmd("temp?")
 
 
-func attitudeQ() -> void:
+func attitude_q() -> void:
 	send_cmd("attitude?")
 
 
-func baroQ() -> void:
+func baro_q() -> void:
 	send_cmd("baro?")
 
 
-func accelerationQ() -> void:
+func acceleration_q() -> void:
 	send_cmd("acceleration?")
 
 
-func tofQ() -> void:
+func tof_q() -> void:
 	send_cmd("tof?")
 
 
-func wifiQ() -> void:
+func wifi_q() -> void:
 	send_cmd("wifi?")
