@@ -98,13 +98,13 @@ func _init_tele_socket() -> void:
 		return
 	_tele_socket = PacketPeerUDP.new()
 	# warning-ignore:return_value_discarded
-	_tele_socket.listen(local_telemetry_port)
+	_tele_socket.bind(local_telemetry_port)
 
 
 func _init_ctrl_socket() -> void:
 	# warning-ignore:return_value_discarded
 	_ctrl_socket = PacketPeerUDP.new()
-	_ctrl_socket.listen(local_ctrl_port)
+	_ctrl_socket.bind(local_ctrl_port)
 
 
 func _process_telemetry() -> void:
